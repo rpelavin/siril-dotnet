@@ -40,8 +40,12 @@
 
             using (var inputWriter = new StreamWriter(inputStream))
             {
-                inputWriter.WriteLine(string.Join(" ", args));
-                inputWriter.Flush();
+                foreach (string arg in args)
+                {
+                    inputWriter.WriteLine(arg);
+                    inputWriter.Flush();
+                }
+
                 using (var outputReader = new StreamReader(outputStream))
                 {
                     while (!outputReader.EndOfStream)
