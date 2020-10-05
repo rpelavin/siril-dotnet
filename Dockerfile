@@ -1,3 +1,3 @@
 FROM ubuntu:latest
 RUN apt-get update
-RUN apt-get install siril
+RUN apt-get install siril -y
