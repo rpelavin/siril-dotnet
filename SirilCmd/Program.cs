@@ -9,7 +9,7 @@
 
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             Process[] processes = Process.GetProcessesByName("siril");
             if (processes.Any())
@@ -37,9 +37,10 @@
                 PipeOptions.None,
                 TokenImpersonationLevel.Impersonation);
             outputStream.Connect();
+
             using (var inputWriter = new StreamWriter(inputStream))
             {
-                inputWriter.WriteLine("help");
+                inputWriter.WriteLine(string.Join(" ", args));
                 inputWriter.Flush();
                 using (var outputReader = new StreamReader(outputStream))
                 {

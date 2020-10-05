@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SirilCmd": {
+      "commandName": "Project",
+      "commandLineArgs": "help"
+    }
+  }
+}
