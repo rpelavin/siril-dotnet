@@ -9,14 +9,28 @@
     {
         static void Main()
         {
-            var stream = new NamedPipeClientStream(
+            var inputStream = new NamedPipeClientStream(
+                ".",
+                "siril_command.in",
+                PipeDirection.Out,
+                PipeOptions.None,
+                TokenImpersonationLevel.Impersonation);
+            inputStream.Connect();
+
+            var outputStream = new NamedPipeClientStream(
                 ".",
                 "siril_command.out",
                 PipeDirection.In,
                 PipeOptions.None,
                 TokenImpersonationLevel.Impersonation);
-            stream.Connect();
-            using (var streamReader = new StreamReader(stream))
+            outputStream.Connect();
+
+            using (var streamWriter = new StreamWriter(inputStream))
+            {
+                streamWriter.WriteLine("help");
+            }
+
+            using (var streamReader = new StreamReader(outputStream))
             {
                 Console.WriteLine(streamReader.ReadToEnd());
             }
