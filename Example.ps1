@@ -1,4 +1,4 @@
-dotnet run -p .\SirilCmd\ `
+dotnet run `
     "cd 'c:\StackBot\Multimedia\Working Files_JS\2020-8-25 Stackbot Example'" `
     "cd bias" `
     "convertraw 2240Bias_" `

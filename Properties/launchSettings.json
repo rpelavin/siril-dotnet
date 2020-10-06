@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "SirilCmd": {
+    "SirilDotNet": {
       "commandName": "Project",
       "commandLineArgs": "help"
     }

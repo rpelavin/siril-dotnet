@@ -1,4 +1,4 @@
-﻿namespace SirilCmd
+﻿namespace SirilDotNet
 {
     using System;
     using System.Diagnostics;
