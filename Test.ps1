@@ -13,4 +13,5 @@ dotnet run -p .\SirilCmd\ `
     "cd dark" `
     "convertraw 2240Dark_" `
     "stack 2240Dark_ rej 3 3 -nonorm" `
-    "cd .."
+    "cd .." `
+    "exit"
