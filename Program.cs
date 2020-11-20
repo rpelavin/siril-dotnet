@@ -4,7 +4,6 @@
     using System.Diagnostics;
     using System.IO;
     using System.IO.Pipes;
-    using System.Linq;
     using System.Security.Principal;
 
     class Program
@@ -12,12 +11,7 @@
         static void Main(string[] args)
         {
             // Launch Siril
-            string sirilExe = new[]
-            {
-                @"C:\Program Files\SiriL\bin\siril.exe",
-                @"C:\Program Files (x86)\SiriL\bin\siril.exe"
-            }.First(path => File.Exists(path));
-            Process process = Process.Start(sirilExe, "-p");
+            Process process = Process.Start(@"C:\Program Files\SiriL\bin\siril.exe", "-p");
             Console.WriteLine($"Launched PID { process.Id }");
 
             // Connect to the input named pipe
